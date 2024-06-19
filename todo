@@ -17,12 +17,3 @@
 - 2 sections (experiences(for normal readers), research(for technical part))
 - add a resources page for the interested
 
-
-Bash Script for Flask applications (Scaffold) for Windows CMD:
-@echo off
-mkdir myflaskapp
-cd myflaskapp
-mkdir static templates
-echo. > app.py
-echo. > templates\index.html
-exit
