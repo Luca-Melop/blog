@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}Home | Luca Mezger{% endblock %}
+
+{% block additional_css %}
+<style>
+    .tab {
+        display: none;
+    }
+    .tab.active {
+        display: block;
+    }
+    .tab-links a {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        display: inline-block;
+        margin-right: 5px;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+    <h1>Admin Dashboard</h1>
+    <div class="tab-links">
+        <a href="#" class="active" onclick="openTab(event, 'manage-posts')">Manage Posts</a>
+        <a href="#" onclick="openTab(event, 'stats')">Statistics</a>
+    </div>
+    <div id="manage-posts" class="tab active">
+        <a href="/add">Add New Post</a>
+        <hr />
+        <hr />
+        {% for post in posts %}
+        <div class="post">
+           <div class="post-preview">
+              <img src="{{ url_for('static', filename='images/preview/' + post.preview_image) }}" alt="{{ post.title }}">
+           </div>
+           <div class="post-details">
+              <span class="post-date">{{ post.created_at.strftime('%b %d, %Y') }}</span>
+              <span class="post-author">By {{ post.author }}</span>
+              <h2>{{ post.title }}</h2>
+              <p>{{ post.content|strip_tags|truncate(300) }}</p>
+              <a href="{{ url_for('post_detail', post_id=post.id) }}" class="read-more">Read More</a>
+            
+              <a href="{{ url_for('edit_post', post_id=post.id) }}">Edit</a> |
+            <a href="{{ url_for('delete_post', post_id=post.id) }}">Delete</a>
+           </div>
+        </div>
+        <hr />
+        {% endfor %}            
+    </div>
+    <div id="stats" class="tab">
+        {% for post in posts %}
+        <div>
+            <h3>{{ post.title }}</h3>
+            <p>Views: {{ post.views }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="/">Back to Home</a>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-links")[0].getElementsByTagName("a");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+{% endblock %}

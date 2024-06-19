@@ -1,0 +1,258 @@
+/* General Body Styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    background-color: #0a0a1b !important;
+    margin: 0;
+    padding: 0;
+}
+
+.row{
+    display: block !important;
+}
+
+/* Header and Navigation Styling */
+header {
+    padding: 10px 0;
+}
+
+nav {
+    text-align: center;
+}
+
+.navbar-header {
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8em !important;
+    padding: 10px 15px;
+    margin: 0;
+    /* Remove margin */
+    color: #fff;
+}
+
+.navbar-collapse {
+    float: right;
+    /* Aligns the navigation to the right */
+}
+
+
+.navbar-toggle {
+    border: none;
+    cursor: pointer;
+    display: none;
+    /* Hide toggle button by default */
+    background-color: #0a0a1b;
+    /* Set the background color */
+    padding: 9px 10px;
+    /* Adjust padding as needed */
+    border-radius: 4px;
+    /* Optional: to have rounded corners */
+}
+
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: #ffffff;
+    /* Set the color of the bars to white */
+    margin: 4px auto;
+    transition: all 0.3s;
+}
+
+/* When navbar is not collapsed, show burger icon */
+.navbar-toggle:not(.collapsed) .icon-bar:nth-child(2) {
+    opacity: 1;
+}
+
+.navbar-toggle:not(.collapsed) .icon-bar:nth-child(1) {
+    transform: translateY(0) rotate(0);
+}
+
+.navbar-toggle:not(.collapsed) .icon-bar:nth-child(3) {
+    transform: translateY(0) rotate(0);
+}
+
+/* When navbar is collapsed, transform icon-bar into X */
+.navbar-toggle.collapsed .icon-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.collapsed .icon-bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.navbar-toggle.collapsed .icon-bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+.navbar-collapse ul {
+    padding: 10px 15px;
+    list-style: none;
+    display: flex;
+    margin: 0;
+    /* Remove default margin */
+}
+
+.navbar-collapse li {
+    display: inline-flex;
+    margin: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Main Content Styling */
+main {
+    padding: 6em 0 0 3em;
+    width: 70%;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 6em 0 0 1em;
+        width: 85%;
+    }
+}
+
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+/* Footer Styling */
+footer {
+    color: #fff;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 50px
+}
+.footerspace{
+    min-height: 70vh;
+    min-height: -webkit-calc(100vh - 50px);
+    min-height: -moz-calc(100vh - 50px);
+    min-height: calc(100vh - 50px);
+}
+
+.mu-copy-right {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .navbar-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+    .navbar-collapse {
+        display: none;
+        /* Hide navbar links initially on smaller screens */
+        width: 100%;
+        float: none;
+        clear: both;
+    }
+
+    .navbar-collapse ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0;
+    }
+
+    .navbar-collapse li {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .navbar-collapse li a {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+    }
+}
+
+@media (min-width: 769px) {
+    .navbar-collapse {
+        display: flex;
+        /* Reset to default display on larger screens */
+        float: right;
+        /* Keep the alignment as before */
+    }
+}
+
+/*posts on index*/
+.post {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+ }
+ 
+ .post-preview img {
+    max-width: 265px; /* Adjust as needed */
+    margin-right: 20px;
+ }
+ 
+ .post-details {
+    flex-grow: 1;
+ }
+ 
+ .post-date, .post-author {
+    display: block;
+ }
+ 
+ .read-more {
+    display: inline-block;
+ }
+ 
+ @media (max-width: 1199px) {
+    #headerhome {
+        display: none;
+    }
+}
+
+
+
+
+#rsi_header{
+    text-align: center; 
+    padding-top: 2.5em;
+}
+
+
+
+#rsi_logo{
+    padding-bottom: 5em; 
+    display: block; 
+    margin: auto;
+}
+
+.custom-hr {
+    width: 75%;        /* Set the width to 75% of its container */
+    margin: 0 auto;    /* Center the line horizontally */
+}
+
+.col-sm-8{
+    max-width: 100% !important;
+}
+
+.timeline-title{
+    margin-top: 0;
+}

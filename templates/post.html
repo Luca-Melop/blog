@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block title %}{{ post.title }} | Luca Mezger{% endblock %} {%
+    block content %}
+
+    {% block additional_css %} 
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "BlogPosting",
+            "headline": {{ post.title|tojson|safe }},
+            "author": {
+                "@type": "Person",
+                "name": {{ post.author|tojson|safe }}
+            },
+            "datePublished": {{ post.created_at.strftime('%Y-%m-%d')|tojson|safe }},
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": {{ url_for('post_detail', post_id=post.id, _external=True)|tojson|safe }}
+            },
+            "articleBody": {{ post.content|striptags|truncate(200, True, '...')|tojson|safe }}
+        }
+        </script>
+    {% endblock %}
+
+
+
+<body>
+    <main role="main">
+    <div class="container">
+        <h1>{{ post.title }}</h1>
+        <p>Posted by {{ post.author }} on {{ post.created_at.strftime('%b %d, %Y') }}</p>
+        <p>----</p>
+        <br>
+        <div class="post-content">
+            {{ post.content|safe }}
+        </div>
+        <br>
+        <p>----</p>
+
+        <a href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+</main>
+{% endblock %}

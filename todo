@@ -1,0 +1,28 @@
+- add statistics (requests, errors, countries)
+- login (not necessary?)
+- set passwords in environment variables/env file
+
+- improve styling
+    - responsive
+    - index animations
+- improve edit post 
+
+- Multi-language support
+
+- a preview of the post, apply styling, not only text
+- add post, bei titel error --> preview image geht verloren
+- embedded images should be stored only after the blog post is posted
+
+- counter (e.g. 34 papers read, 55hours researched, 23 lectures attended)
+- 2 sections (experiences(for normal readers), research(for technical part))
+- add a resources page for the interested
+
+
+Bash Script for Flask applications (Scaffold) for Windows CMD:
+@echo off
+mkdir myflaskapp
+cd myflaskapp
+mkdir static templates
+echo. > app.py
+echo. > templates\index.html
+exit

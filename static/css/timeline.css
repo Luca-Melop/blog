@@ -1,0 +1,127 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    color: rgb(219, 219, 219);
+}
+.container-fluid .row {
+    padding: 0 0 4em 0;
+}
+
+.col-sm-8{
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+@media (max-width: 768px) {
+    .col-sm-8{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+/*================================== TIMELINE ==================================*/
+/*-- GENERAL STYLES ------------------------------*/
+.timeline {
+    line-height: 1.4em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.timeline h1, .timeline h2, .timeline h3, .timeline h4, .timeline h5, .timeline h6 {
+    line-height: 1.17; /*1.17 times the size of font size*/
+}
+/*----- TIMELINE ITEM -----*/
+.timeline-item {
+    padding-left: 40px;
+    position: relative;
+}
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+/*----- TIMELINE INFO -----*/
+.timeline-info {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin: 0 0 0.5em 0;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+/*----- TIMELINE MARKER -----*/
+.timeline-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 15px;
+}
+.timeline-marker:before {
+    background: transparent;
+    border: 3px solid rgb(219, 219, 219);
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 15px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 15px;
+    transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.timeline-marker:after {
+    content: "";
+    width: 3px;
+    background: #ccd5db;
+    display: block;
+    position: absolute;
+    top: 24px;
+    bottom: 0;
+    left: 6px;
+}
+.timeline-item:last-child .timeline-marker:after {
+    content: none;
+}
+.timeline-item:not(.period):hover .timeline-marker:before {
+    background: rgb(219, 219, 219);
+    border: 3px solid rgb(219, 219, 219);
+}
+/*----- TIMELINE CONTENT -----*/
+.timeline-content {
+    padding-bottom: 55px;
+}
+.timeline-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+.post-preview {
+    float: left;
+}
+
+.preview-image {
+    min-width: 150px;
+    height: auto;
+}
+
+.post-details {
+    overflow: hidden; /* Clear the float */
+}
+
+/* Mobile devices */
+@media (max-width: 850px) {
+    .post-preview {
+        float: none;
+        width: 100%;
+        margin: 0 0 15px 0; /* Add some space below the image */
+    }
+
+    .preview-image {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .post-details {
+        overflow: visible;
+    }
+}

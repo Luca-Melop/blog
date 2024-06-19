@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Matomo Tag Manager -->
+<script>
+    var _mtm = window._mtm = window._mtm || [];
+    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+    (function() {
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src='https://analytics.lucamezger.com/js/container_XOcZY0Jn_dev_b994936a8941189390698ce8.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Tag Manager -->
+    <title>{% block title %}Luca Mezger{% endblock %}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='assets/favicon.ico') }}"
+      type="image/x-icon"
+    />
+    <meta property="og:title" content="RSI Blog | Luca Mezger" />
+    <meta
+      property="og:description"
+      content="Blog about my experiences at RSI"
+    />
+    <!--<meta property="og:image" content="Image URL Here"> -->
+    <meta property="og:url" content="https://lucamezger.com/rsi" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:title" content="RSI Blog | Luca Mezger" />
+    <meta
+      name="twitter:description"
+      content="Blog about my experiences at RSI 2024"
+    />
+    <!--<meta name="twitter:image" content="Image URL Here"> -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="canonical" href="http://lucamezger.com/rsi" />
+
+    <meta name="robots" content="index, follow" />
+
+    <!-- Main Style -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+
+    {% block additional_css %} {% endblock %}
+  </head>
+  <body>
+
+    <div class="footerspace">
+        <header>
+      <nav>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbarContent"
+            aria-expanded="false"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <!-- Text Logo -->
+          <a class="navbar-brand" href="/">Luca Mezger</a>
+        </div>
+
+        <div class="navbar-collapse" id="navbarContent" data-collapsed="true">
+          <ul>
+            <li><a href="/contact">CONTACT</a></li>
+          </ul>
+        </div>
+      </nav>
+        </header>
+        {% block content %} {% endblock %} 
+    </div>
+    <footer>
+      <p class="mu-copy-right">
+        <a href="/admin">&copy;</a> Copyright <strong>Luca Mezger</strong>. All
+        right reserved.
+      </p>
+    </footer>
+  </body>
+  
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var navbarToggle = document.querySelector(".navbar-toggle");
+    var navbarContent = document.getElementById("navbarContent");
+
+    // Set initial state
+    navbarToggle.classList.remove("collapsed");
+
+    navbarToggle.addEventListener("click", function () {
+      navbarContent.style.display =
+        navbarContent.style.display === "block" ? "none" : "block";
+      navbarToggle.classList.toggle("collapsed");
+    });
+  });
+</script>
+
+</html>
