@@ -1,6 +1,4 @@
-- add statistics (requests, errors, countries)
-- login (not necessary?)
-- set passwords in environment variables/env file
+- improve statistics (requests, errors, countries)
 
 - improve styling
     - responsive
@@ -10,10 +8,7 @@
 - Multi-language support
 
 - a preview of the post, apply styling, not only text
-- add post, bei titel error --> preview image geht verloren
+- add post, bei titel error --> preview image is lost
 - embedded images should be stored only after the blog post is posted
 
-- counter (e.g. 34 papers read, 55hours researched, 23 lectures attended)
-- 2 sections (experiences(for normal readers), research(for technical part))
-- add a resources page for the interested
-
+add encryption for PW!
