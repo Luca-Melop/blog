@@ -13,6 +13,8 @@ from PIL import Image
 from form import ContactForm 
 from flask_mail import Mail, Message
 
+ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME')
+ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD')
 
 def crop_to_aspect_ratio(image_path, output_path, aspect_width=3, aspect_height=2):
     image = Image.open(image_path)
@@ -116,7 +118,7 @@ def post_detail(post_id):
 def login():
     if request.method == 'POST':
         # For simplicity, use a fixed username and password
-        if request.form['username'] == 'luca' and request.form['password'] == 'T3DULy&H8#fMSjgTxinDx4S7CsWENx#U':
+        if request.form['username'] == ADMIN_USERNAME and request.form['password'] == ADMIN_PASSWORD:
             session['logged_in'] = True
             return redirect(url_for('admin_dashboard'))
         else:
