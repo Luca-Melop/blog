@@ -66,7 +66,7 @@ def allowed_file(filename):
 
 
 app = Flask(__name__)
-app.secret_key = os.environ.get('SECRET_KEY', 'C*e6omjgtsRn3$8RB&ct9Z6rq!JoJ3AspDN6Ho8F$3DKupc5du5h6TxFXP')
+app.secret_key = os.environ.get('SECRET_KEY', 'SECRETKEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', 'sqlite:///blog.db')
 
 db = SQLAlchemy(app)
